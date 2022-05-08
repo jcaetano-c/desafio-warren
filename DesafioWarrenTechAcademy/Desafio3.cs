@@ -1,23 +1,47 @@
-﻿namespace DesafioWarrenTechAcademy
+﻿using System.Collections;
+
+namespace DesafioWarrenTechAcademy
 {
     public class Desafio3
     {
         public void Desafio()
         {
-            int n = 10;
-            int[] v = { 2, 4, 3 };
+            Console.Write("Informe a soma alvo: ");
+            int soma = int.Parse(Console.ReadLine());
 
-            Array.Sort(v);
-            var res = v.Where(x => x == n);
-            if (res.Count() >= 1)
+            int valor = 0;
+            List<int> nums = new List<int>();
+
+            Console.WriteLine($"Digite uma sequência de números inteiros: ");
+            Console.WriteLine("-1 para sair");
+            for (int i = 0; valor != -1; i++)
             {
-                Console.WriteLine(n);
-                return;
+                valor = int.Parse(Console.ReadLine());
+                if (valor != -1)
+                    nums.Add(valor);
+            }
+            encontrarCombinacao(nums, soma);
+        }
+            
+            private void encontrarCombinacao(List<int> nums, int soma)
+        {
+            Hashtable set = new Hashtable();
+            bool encontrado = false;
+
+            for (int i = 0; i < nums.Count; i++)
+            {
+                if(set.Contains(soma - nums[i]))
+                {
+                    encontrado = true;
+                    Console.WriteLine($"{{ {soma - nums[i]}, {nums[i]} }}");
+                }
+
+                set.Add(nums[i], i);
             }
 
-            //int i = 0;
-            //int j = n - 1;
-
+            if (!encontrado)
+                Console.WriteLine("Par não encontrado.");
+        
         }
     }
 }

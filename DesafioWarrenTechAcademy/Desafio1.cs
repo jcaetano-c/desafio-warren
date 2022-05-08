@@ -37,12 +37,3 @@
         }
     }
 }
-/*
-
-num = 253
-
-cifra = num % 10 = 3
-num =/ 10 = 25
-cifra = cifra + ((num % 10) * 10^)
-
- */

@@ -13,8 +13,8 @@ namespace DesafioWarrenTechAcademy
         {
             Console.Clear();
             Console.WriteLine("DESAFIOS DESENVOLVIDOS POR JAIRO CAETANO JUNIOR.");
-            Console.WriteLine("Digite 0 para sair.\n");
             Console.WriteLine("Qual desafio deseja executar?");
+            Console.WriteLine("Digite 0 para sair.\n");
             short option = short.Parse(Console.ReadLine());
             Console.Clear();
             switch (option)
